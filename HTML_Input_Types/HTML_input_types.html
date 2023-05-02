@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html style="background-color: rgb(24, 26, 27); color: white;  " lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-\searchwidth, initial-scale=1.0" />
+    <title>HTML Input Types</title>
+    <style>
+        textarea {
+            background-color: rgb(31, 33, 35);
+            border: 1 px solid black;
+            resize: none;
+            color: rgb(206, 206, 206);
+        }
+
+        .parent {
+            display: flex;
+        }
+
+        .test {
+            width: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="test">
+            <h2>For_text</h2>
+            <input type="text" style="background-color: rgba(42, 45 ,46);border-radius: 4px;"
+                id="text-demo" /><br /><br />
+            <button style="background-color: rgb(55, 59, 61); color: white;"
+                onclick="getTextValue()">Get_Value</button><br /><br />
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For text</h2>
+                <input type="text" id="text-demo"/><br><br>
+                <button onclick="getTextValue()">Get_Value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For_checkbox</h2>
+            <input type="checkbox" id="checkbox-demo" readonly /><br /><br />
+            <button style="background-color: rgb(55, 59, 61); color: white;"
+                onclick="getcheckValue()">Get_Check</button><br /><br />
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For checkbox</h2>
+                <input type="checkbox" id="checkbox-demo" /><br><br>
+                <button onclick="getcheckValue()">Get_Check</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For_color</h2>
+            <input type="color" id="color-demo" readonly /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;" ; color: white;"
+                onclick="getcolorValue()">Get_color</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For color</h2>
+                <input type="color" id="color-demo" /><br><br>
+                <button onclick="getcolorValue()">Get_color</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For date</h2>
+            <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="date"
+                id="date-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getdateValue()">Get_date</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For date</h2>
+                <input type="date" id="date-demo" /><br><br>
+                <button onclick="getdateValue()">Get_date</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For Time</h2>
+            <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="time"
+                id="time-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getTimeValue()">Get_Value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly> <h2>For Time</h2>
+                <input type="time" id="time-demo" /><br><br>
+                <button onclick="getTimeValue()">Get_Value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For Datetime</h2>
+            <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="datetime-local"
+                id="datetime-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getdatetimeValue()">Get_datetime</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly> <h2>For Datetime</h2>>
+                <input type="datetime-local" id="datetime-demo" /><br><br>
+                <button onclick="getdatetimeValue()">Get_datetime</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Week</h2>
+            <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="week"
+                id="week-demo" />
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getWeekValue()">Get_value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Week</h2>
+                <input type="week" id="week-demo" />
+                <button onclick="getWeekValue()">Get_value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Month</h2>
+            <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="month"
+                id="month-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getMonthValue()">Get_value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Month</h2>
+                <input type="month" id="month-demo" /><br>
+                <button onclick="getMonthValue()">Get_value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For email</h2>
+            <p>Enter your email address.</p>
+            <form action="page-handler.html">
+                <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="email"
+                    id="email-demo" />
+                <input style="background-color: rgb(59, 59, 59); color: white;" type="submit" />
+            </form><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getemailValue()">Get_value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For email</h2>
+                <p>Enter your email address.</p>
+                <form action="page-handler.html">
+                    <input type="email" id="email-demo" />
+                    <input type="submit" />
+                </form><br>
+                <button onclick="getemailValue()">Get_value</button><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For file</h2>
+            <input type="file" id="file-demo" onchange="readfile()" /><br><br>
+            <img src="" alt="This photo can't avaiable" id="selected-img-result"
+                style="width: 100px; height: 100px;" /><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For file</h2>
+                <input type="file" id="file-demo" onchange="readfile()" /><br><br>
+                <img src="" alt="This photo can't avaiable" 
+                id="selected-img-result" style="width: 100px; 
+                height: 100px;" /><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Hidden</h2>
+            <input type="hidden" value="I am hidden value" id="hidden-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getHiddenValue()">Get_value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Hidden</h2>
+                <input type="hidden" value="I am hidden value" 
+                id="hidden-demo" /><br><br>
+                <button onclick="getHiddenValue()">Get_value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Number</h2>
+            <p>Try entering an invaild number and click submit</p>
+            <form>
+                <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="number"
+                    id="number-demo" />
+                <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;"
+                    type="submit" /><br><br>
+                <button style="background-color: rgb(59, 59, 59); color: white;"
+                    onclick="getNumberValue()">Get_value</button>
+            </form><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Number</h2>
+                <p>Try entering an invaild number and click submit</p>
+                <form>
+                    <input type="number" id="number-demo" />
+                    <input type="submit" /><br><br>
+                <button onclick="getNumberValue()">Get_value</button>
+                </form><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Password</h2>
+            <input style="background-color: rgba(42, 45 ,46);border-radius: 4px; color: white;" type="password"
+                id="password-demo" />
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getPasswordValue()">Get_password</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Password</h2>
+                <input type="password" id="password-demo"/><br>
+                <button onclick="getPasswordValue()">Get_value</button>
+                <br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Radio</h2>
+            <input type="radio" name="gender" value="Male" id="male" />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="Female" id="female" />
+            <label for="female">Female</label><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getRadioValue()">Get_Value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Radio</h2>
+                <input type="radio" name="gender" value="Male" 
+                    id="male" />
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="Female" 
+                    id="female" />
+                <label for="female">Female</label><br><br>
+                <button onclick="getRadioValue()">Get_Value</button><br><br>
+                    <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Range</h2>
+            <input type="range" id="range-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getRangeValue()">Get_Value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Range</h2>
+                <input type="range" id="range-demo" /><br><br>
+                <button onclick="getRangeValue()">Get_Value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Search</h2>
+            <input style="background-color: rgb(59, 59, 59); color: white;" type="search" id="search-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getSearchValue()">Get_Value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Search</h2>
+                <input type="search" id="search-demo" /><br><br>
+                <button onclick="getSearchValue()">Get_Value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Search</h2>
+            <input style="background-color: rgb(59, 59, 59); color: white;" type="search" id="search-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getSearchValue()">Get_Value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Search</h2>
+                <input type="search" id="search-demo" /><br><br>
+                <button onclick="getSearchValue()">Get_Value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Tel</h2>
+            <input style="background-color: rgb(59, 59, 59); color: white;" type="tel" id="tel-demo" /><br><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getTelValue()">Get_Value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Tel</h2>
+                <input type="tel" id="tel-demo" /><br><br>
+                <button onclick="getTelValue()">Get_Value</button><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>URL</h2>
+            <p>Try entering an invaild url and click submit</p>
+            <form>
+                <input style="background-color: rgb(59, 59, 59); color: white;" type="url" id="url-demo" />
+                <input style="background-color: rgb(59, 59, 59); color: white;" type="submit" />
+            </form><br>
+            <button style="background-color: rgb(59, 59, 59); color: white;"
+                onclick="getUrlValue()">Get_value</button><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>URL</h2>
+                <p>Try entering an invaild url and click submit</p>
+                <form action="page-handler.html">
+                    <input type="url" id="url-demo" />
+                    <input type="submit" />
+                </form><br>
+                <button onclick="getUrlValue()">Get_value</button><br><br>
+                <hr>
+            
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>Button</h2>
+            <input style="background-color: rgb(59, 59, 59); color: white;" type="button" id="button-demo"
+                value="Click me!" onclick="buttonFunction()"><br><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>Button</h2>
+                <input type="button" id="button-demo" value="Click me!" 
+                onclick="buttonFunction()"><br><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+    <div class="parent">
+        <div class="test">
+            <h2>For reset</h2>
+            <form id="myForm" onsubmit="Submit(event)">
+                <label for="name">Name:</label>
+                <input style="background-color: rgb(59, 59, 59); color: white;" type=" text" id="name" name="name"
+                    value="" placeholder="Enter username"><br>
+
+                <label for="email">Email:</label>
+                <input style="background-color: rgb(59, 59, 59); color: white;" type=" email" id="email" name="email"
+                    value="" placeholder="Enter your email address"><br><br>
+
+                <input style="background-color: rgb(59, 59, 59); color: white;" type="reset" value="Reset"
+                    onclick="Reset()">
+                <input style="background-color: rgb(59, 59, 59); color: white;" type="submit" value="Submit">
+            </form><br>
+        </div>
+        <div class="textarea-container">
+            <textarea rows="8" cols="70" readonly><h2>For reset</h2>
+                <form id="myForm" onsubmit="Submit(event)">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="" 
+                    placeholder="Enter username"><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" 
+                    value="" placeholder="Enter your email address">
+                    <br><br>
+
+                    <input type="reset" value="Reset" 
+                    onclick="Reset()">
+                    <input type="submit" value="Submit">
+                </form><br>
+                <hr>
+            </textarea>
+        </div>
+    </div>
+    <hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
